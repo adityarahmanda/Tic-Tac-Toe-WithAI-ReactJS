@@ -60,9 +60,8 @@ const Game = ({isRestart, playmode, difficulty}) => {
       const tie = Helper.isBoardFilled(squares);
 
       if(winner || tie) {
-        if(winner) { 
-          const notification = <><span className={xo}>{xo}</span> Win</>;
-          setNotification(notification, 1500);
+        if(winner) {
+          setNotification(<><span className={xo}>{xo}</span> Win</>, 1500);
           console.log(xo + " Win!");
 
           let newScores = scores;
@@ -105,8 +104,8 @@ const Game = ({isRestart, playmode, difficulty}) => {
     }  
     
     function restart() {
-      console.log("restart");
-      
+      setNotification("Restart", 1500);
+      setScore(Array(2).fill(0));
       setHistory([Array(9).fill(null)]);
       setStepNumber(0);
       setXIsNext(true);
@@ -117,7 +116,7 @@ const Game = ({isRestart, playmode, difficulty}) => {
       if(isRestart) {
         restart();
       }
-    }, [isRestart]);
+    });
 
     //Check AI movement
     useEffect(() => {

@@ -79,7 +79,7 @@ const App = () => {
             { gameStarted ? <Game playmode={playmode} difficulty={difficulty} isRestart={isRestart}/> : <MainMenu onClick={playmode => startGame(playmode)} /> } 
             </div>
         </main>
-        { !gameStarted && <footer id="footer" className="centered">@2020 - <a href="https://adityarahmanda.nasihosting.com">Aditya Rahmanda</a></footer> }
+        { !gameStarted && <footer id="footer" className="centered">@2020 - <a href="https://adityarahmanda.com">Aditya Rahmanda</a></footer> }
     </>
     );
 }
